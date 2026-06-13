@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.37012.4 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MachineTestAPI", "MachineTestAPI.csproj", "{D3B4F1A9-2F21-4A89-85ED-FFF8445D1416}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D3B4F1A9-2F21-4A89-85ED-FFF8445D1416}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3B4F1A9-2F21-4A89-85ED-FFF8445D1416}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3B4F1A9-2F21-4A89-85ED-FFF8445D1416}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3B4F1A9-2F21-4A89-85ED-FFF8445D1416}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0500E770-89CF-4BB0-BDA0-368B8E4C71B0}
+	EndGlobalSection
+EndGlobal

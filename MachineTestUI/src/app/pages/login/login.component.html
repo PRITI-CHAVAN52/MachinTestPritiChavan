@@ -1,0 +1,38 @@
+<div style="width:350px;margin:80px auto;">
+
+<h2>Login</h2>
+
+<input
+type="email"
+[(ngModel)]="email"
+placeholder="Enter Email"
+style="width:100%;padding:10px;"
+>
+
+<br><br>
+
+<input
+type="password"
+[(ngModel)]="password"
+placeholder="Enter Password"
+style="width:100%;padding:10px;"
+>
+
+<br><br>
+
+<button
+(click)="login()"
+style="
+width:100%;
+padding:10px;
+background:#1976d2;
+color:white;
+border:none;
+cursor:pointer;
+">
+
+Login
+
+</button>
+
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+<h1>Dashboard</h1>
+<div class="cards">
+
+<div class="card">
+
+<h3>Employees</h3>
+<p>{{data?.[0]?.TotalEmployees}}</p>
+
+</div>
+
+<div class="card">
+<h3>Active</h3>
+<p>{{data?.[0]?.ActiveEmployees}}</p>
+
+</div>
+<div class="card">
+
+<h3>Inactive</h3>
+
+<p>{{data?.[0]?.InactiveEmployees}}</p>
+
+</div>
+<div class="card">
+
+<h3>Departments</h3>
+
+<p>{{data?.[0]?.TotalDepartments}}</p>
+
+</div>
+
+</div>
+
+<div class="buttons">
+
+<button
+(click)="goDepartment()">Department</button>
+
+<button (click)="goEmployee()">Employee</button>
+
+<button (click)="logout()">Logout</button>
+
+</div>
+
+</div>
