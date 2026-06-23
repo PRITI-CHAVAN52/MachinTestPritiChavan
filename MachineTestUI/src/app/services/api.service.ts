@@ -1,32 +1,39 @@
 import { Injectable } from '@angular/core';
-import {HttpClient,HttpHeaders
+
+import {
+HttpClient,
+HttpHeaders
 }
 from '@angular/common/http';
+
 @Injectable({
 providedIn:'root'
 })
 
-export class ApiService
-{
+export class ApiService {
 
-baseUrl=
+url=
 'https://localhost:7140/api/Master/';
 
 constructor(
-private http:HttpClient
-){}
+private http:
+HttpClient
+)
+{}
 
-getHeader()
+getHeaders()
 {
 
-return {
+return{
 
 headers:
 
 new HttpHeaders({
 
 Authorization:
+
 'Bearer '+
+
 localStorage.getItem(
 'token'
 )
@@ -40,8 +47,7 @@ localStorage.getItem(
 login(data:any)
 {
 return this.http.post(
-this.baseUrl+
-'Login',
+this.url+'Login',
 data
 );
 }
@@ -49,27 +55,98 @@ data
 dashboard()
 {
 return this.http.get(
-this.baseUrl+
-'Dashboard',
-this.getHeader()
+this.url+'Dashboard',
+this.getHeaders()
 );
 }
 
 department()
 {
 return this.http.get(
-this.baseUrl+
-'GetDepartment',
-this.getHeader()
+this.url+'GetDepartment',
+this.getHeaders()
+);
+}
+
+addDepartment(data:any)
+{
+return this.http.post(
+this.url+'AddDepartment',
+data,
+this.getHeaders()
+);
+}
+
+updateDepartment(data:any)
+{
+return this.http.put(
+this.url+'UpdateDepartment',
+data,
+this.getHeaders()
+);
+}
+
+deleteDepartment(id:number)
+{
+return this.http.delete(
+this.url+
+'DeleteDepartment/'+id,
+this.getHeaders()
 );
 }
 
 employee()
 {
 return this.http.get(
-this.baseUrl+
+this.url+
 'GetEmployee',
-this.getHeader()
+this.getHeaders()
+);
+}
+
+addEmployee(data:any)
+{
+return this.http.post(
+this.url+
+'AddEmployee',
+
+data,
+
+this.getHeaders()
+
+);
+}
+
+updateEmployee(data:any)
+{
+return this.http.put(
+this.url+
+'UpdateEmployee',
+
+data,
+
+this.getHeaders()
+
+);
+}
+
+deleteEmployee(id:number)
+{
+return this.http.delete(
+this.url+
+'DeleteEmployee/'+id,
+
+this.getHeaders()
+
+);
+}
+
+report()
+{
+return this.http.get(
+this.url+
+'Report',
+this.getHeaders()
 );
 }
 

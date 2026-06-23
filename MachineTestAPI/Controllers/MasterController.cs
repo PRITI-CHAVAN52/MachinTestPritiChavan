@@ -232,6 +232,71 @@ namespace MachineTestAPI.Controllers
             );
 
         }
+        [Authorize]
+        [HttpPut]
+        [Route("UpdateDepartment")]
+        public async Task<IActionResult>UpdateDepartment(RequestModel model)
+        {
+            model.Action = "UPDATE_DEPT";
+
+            await repo.ExecuteSP(model);
+
+            return Ok(
+            "Department Updated"
+            );
+        }
+
+        [Authorize]
+        [HttpDelete]
+        [Route("DeleteDepartment/{id}")]
+        public async Task<IActionResult>DeleteDepartment(int id)
+        {
+            RequestModel model = new();
+
+            model.Action = "DELETE_DEPT";
+
+            model.DepartmentId = id;
+
+            await repo.ExecuteSP(model);
+
+            return Ok(
+            "Department Deleted"
+            );
+        }
+
+        [Authorize]
+        [HttpPut]
+        [Route("UpdateEmployee")]
+        public async Task<IActionResult>UpdateEmployee(RequestModel model)
+        {
+            model.Action = "UPDATE_EMP";
+
+            await repo.ExecuteSP(model);
+
+            return Ok(
+            "Employee Updated"
+            );
+        }
+
+        [Authorize]
+        [HttpDelete]
+        [Route("DeleteEmployee/{id}")]
+        public async Task<IActionResult>DeleteEmployee(int id)
+        {
+            RequestModel model = new();
+
+            model.Action = "DELETE_EMP";
+
+            model.EmployeeId = id;
+
+            await repo.ExecuteSP(model);
+
+            return Ok(
+            "Employee Deleted"
+            );
+        }
+
+
 
     }
 

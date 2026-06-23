@@ -1,17 +1,30 @@
-import { Component } from '@angular/core';
+import {
+Component
+}
+from '@angular/core';
 
-import { FormsModule } from '@angular/forms';
+import {
+FormsModule
+}
+from '@angular/forms';
 
-import { Router } from '@angular/router';
+import {
+Router
+}
+from '@angular/router';
 
-import { ApiService }
+import {
+ApiService
+}
 from '../../services/api.service';
 
 @Component({
 
-selector:'app-login',
+selector:
+'app-login',
 
-standalone:true,
+standalone:
+true,
 
 imports:
 [
@@ -19,16 +32,26 @@ FormsModule
 ],
 
 templateUrl:
-'./login.component.html'
+'./login.component.html',
+
+styleUrls:
+[
+'./login.component.css'
+]
 
 })
 
 export class LoginComponent
 {
 
-email='';
+loginObj:any=
+{
 
-password='';
+email:'',
+
+password:''
+
+};
 
 constructor(
 
@@ -38,25 +61,16 @@ ApiService,
 private router:
 Router
 
-){}
+)
+{}
 
 login()
 {
 
-const body=
-{
-
-email:
-this.email,
-
-password:
-this.password
-
-};
-
 this.api
-.login(body)
-
+.login(
+this.loginObj
+)
 .subscribe({
 
 next:
@@ -74,7 +88,7 @@ res.role
 );
 
 alert(
-'Login Success'
+'Login Successful'
 );
 
 this.router.navigate(
@@ -85,11 +99,12 @@ this.router.navigate(
 
 },
 
-error:()=>
+error:
+()=>
 {
 
 alert(
-'Invalid Login'
+'Invalid Credentials'
 );
 
 }

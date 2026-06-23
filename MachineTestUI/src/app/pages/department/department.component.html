@@ -1,9 +1,46 @@
-<h1>Departments</h1>
+<div class="container">
 
-<table
-border="1"
-cellpadding="10"
+<h2>
+Department Master
+</h2>
+
+<div class="form">
+
+<input
+[(ngModel)]="department.DepartmentName"
+placeholder="Department Name"
+/>
+
+<input
+[(ngModel)]="department.Description"
+placeholder="Description"
+/>
+
+<select
+[(ngModel)]="department.Status"
 >
+
+<option [ngValue]="true">
+Active
+</option>
+
+<option [ngValue]="false">
+Inactive
+</option>
+
+</select>
+
+<button
+(click)="save()"
+>
+
+{{edit?'Update':'Add'}}
+
+</button>
+
+</div>
+
+<table>
 
 <tr>
 
@@ -12,6 +49,10 @@ cellpadding="10"
 <th>Name</th>
 
 <th>Description</th>
+
+<th>Status</th>
+
+<th>Action</th>
 
 </tr>
 
@@ -32,6 +73,38 @@ cellpadding="10"
 {{x.Description}}
 </td>
 
+<td>
+
+{{x.Status
+?
+'Active'
+:
+'Inactive'}}
+
+</td>
+
+<td>
+
+<button
+(click)="editData(x)"
+>
+
+Edit
+
+</button>
+
+<button
+(click)="delete(x.DepartmentId)"
+>
+
+Delete
+
+</button>
+
+</td>
+
 </tr>
 
 </table>
+
+</div>

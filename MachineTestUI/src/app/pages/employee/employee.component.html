@@ -1,18 +1,67 @@
-<div class="page">
+<div class="container">
 
-<h1>
-Employees
-</h1>
+<h2>
+Employee Master
+</h2>
+
+<div class="form">
+
+<input
+placeholder="Code"
+[(ngModel)]="employee.EmployeeCode"
+/>
+
+<input
+placeholder="Name"
+[(ngModel)]="employee.EmployeeName"
+/>
+
+<input
+placeholder="Designation"
+[(ngModel)]="employee.Designation"
+/>
+
+<input
+placeholder="Email"
+[(ngModel)]="employee.Email"
+/>
+
+<input
+placeholder="Mobile"
+[(ngModel)]="employee.MobileNo"
+/>
+
+<input
+type="number"
+placeholder="Department Id"
+[(ngModel)]="employee.DepartmentId"
+/>
+
+<button
+(click)="save()"
+>
+
+{{edit?'Update':'Add'}}
+
+</button>
+
+</div>
 
 <table>
 
 <tr>
+
+<th>ID</th>
+
+<th>Code</th>
 
 <th>Name</th>
 
 <th>Department</th>
 
 <th>Designation</th>
+
+<th>Action</th>
 
 </tr>
 
@@ -22,20 +71,38 @@ Employees
 >
 
 <td>
+{{x.EmployeeId}}
+</td>
 
+<td>
+{{x.EmployeeCode}}
+</td>
+
+<td>
 {{x.EmployeeName}}
-
 </td>
 
 <td>
-
 {{x.DepartmentName}}
+</td>
 
+<td>
+{{x.Designation}}
 </td>
 
 <td>
 
-{{x.Designation}}
+<button
+(click)="editData(x)"
+>
+Edit
+</button>
+
+<button
+(click)="delete(x.EmployeeId)"
+>
+Delete
+</button>
 
 </td>
 
